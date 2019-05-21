@@ -1,18 +1,32 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {HttpClientModule} from '@angular/common/http';
+import {NgModule} from '@angular/core';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {MatNativeDateModule} from '@angular/material';
+import {BrowserModule} from '@angular/platform-browser';
+import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import {MyOwnCustomMaterialModule} from './modules/my-own-custom-material-module.module';
+import {AppComponent} from './app.component';
+import {AppRoutingModule} from './app-routing.module';
+
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    BrowserAnimationsModule,
+    FormsModule,
+    HttpClientModule,
+    MyOwnCustomMaterialModule,
+    MatNativeDateModule,
+    ReactiveFormsModule,
+    AppRoutingModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  entryComponents: [AppComponent],
+  declarations: [AppComponent],
+  bootstrap: [AppComponent],
+  providers: []
 })
-export class AppModule { }
+export class AppModule {}
+
+platformBrowserDynamic().bootstrapModule(AppModule);
