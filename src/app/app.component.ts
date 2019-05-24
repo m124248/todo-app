@@ -5,6 +5,12 @@ export interface Priority {
   value: number;
   viewValue: number;
 }
+
+export interface Place {
+  value: string;
+  viewValue: string;
+}
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -12,6 +18,9 @@ export interface Priority {
 })
 export class AppComponent {
   title = 'List Keeper';
+  // displayedColumns = ["Todo", "Importance", "Work or Home" ,"actions"];
+
+  public selectedItem: any;
 
   priorities: Priority[] = [
     {value: 1, viewValue: 1},
@@ -20,14 +29,14 @@ export class AppComponent {
     {value: 4, viewValue: 4}
   ];
 
-  // options: FormGroup;
-  //
-  // constructor(fb: FormBuilder) {
-  //   this.options = fb.group({
-  //     hideRequired: false,
-  //     floatLabel: 'auto',
-  //   });
-  // }
+  places: Place[] = [
+    {value: 'Home', viewValue: 'Home'},
+    {value: 'Work', viewValue: 'Work'}
+  ];
+
+  onDelete = () => {
+    this.selectedItem = null;
+  }
 }
 
 

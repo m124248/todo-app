@@ -1,28 +1,40 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-</div>
-<h2>Let's create a todo tracker: </h2>
+<mat-toolbar class="navbar mdl-shadow--2dp">
+  <span>
+    <i class="fa fa-anchor" aria-hidden="true"></i>
+  </span>
+  <span>
+    {{title}}
+  </span>
+  <span>
+    <i class="fa fa-anchor aria-hidden=true"></i>
+  </span>
+</mat-toolbar>
+
+<h2>
+  Let's create a todo tracker:
+  <span>
+    <i class="fa fa-bath" aria-hidden="true"></i>
+  </span>
+</h2>
 
 <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
   <thead>
   <tr>
     <th class="mdl-data-table__cell--non-numeric">To Do</th>
-    <th>Importance</th>
-    <th>Work or Home</th>
+    <th class="mdl-data-table__cell--non-numeric">Priority</th>
+    <th class="mdl-data-table__cell--non-numeric">Work or Home</th>
+    <th class="mdl-data-table__cell--non-numeric">Delete Row</th>
   </tr>
   </thead>
   <tbody>
   <tr>
     <td class="mdl-data-table__cell--non-numeric">
-      <mat-form-field>
-        <input matInput #input maxlength="10" placeholder="Action Item">
+      <mat-form-field class="auto-size">
+        <input matInput #input maxlength="50" placeholder="Action Item">
       </mat-form-field>
-    </td> <!-- TODO:input form field-->
+    </td>
     <td>
-      <mat-form-field>
+      <mat-form-field class="auto-size">
         <mat-label>Rate</mat-label>
         <mat-select>
           <mat-option *ngFor="let priority of priorities" [value]="priority.value">
@@ -31,34 +43,41 @@
         </mat-select>
       </mat-form-field>
     </td>
-    <td>Home</td> <!--TODO: ADD DROPDOWN HERE-->
+    <td>
+      <mat-form-field class="auto-size">
+        <mat-label>Choose One</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let place of places" [value]="place.value">
+            {{place.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </td>
+    <td>
+      <button mat-icon-button matTooltip="Click to Delete" class="iconbutton" (click)="onDelete()"
+              color="warn">
+        <mat-icon aria-label="Delete">delete</mat-icon>
+      </button>
+    </td>
+<!--    <td>-->
+<!--      <ng-container matColumnDef="actions">-->
+<!--        <mat-header-cell *matHeaderCellDef>Actions </mat-header-cell>-->
+<!--        <mat-cell *matCellDef="let row">-->
+<!--          <button mat-icon-button matTooltip="Click to Edit" class="iconbutton" color="primary">-->
+<!--            <mat-icon aria-label="Edit">edit</mat-icon>-->
+<!--          </button>-->
+<!--          <button mat-icon-button matTooltip="Click to Delete" class="iconbutton" color="warn">-->
+<!--            <mat-icon aria-label="Delete">delete</mat-icon>-->
+<!--          </button>-->
+<!--        </mat-cell>-->
+<!--      </ng-container>-->
+<!--    </td>-->
   </tr>
-  <tr>
-    <td class="mdl-data-table__cell--non-numeric">Walk Lacey</td>
-    <td>4</td>
-    <td>Home</td>
-  </tr>
-  <tr>
-    <td class="mdl-data-table__cell--non-numeric">Laminate (Gold on Blue)</td>
-    <td>10</td>
-    <td>$2.35</td>
-  </tr>
+
   </tbody>
 </table>
 
-<!--TODO: put form field box here-->
-
 <body>
-<!-- Accent-colored raised button with ripple -->
-  <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-   Save
-  </button>
+  <button mat-raised-button color="accent">Add Item!</button>
 </body>
-<!-- Colored FAB button -->
-<body>
-  <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored">
-    <i class="material-icons">add</i>
-  </button>
-</body>
-
 <router-outlet></router-outlet>
