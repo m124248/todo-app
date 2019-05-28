@@ -1,3 +1,6 @@
+@import '../../node_modules/@angular/material/theming';
+@include mat-core();
+
 .auto-size {
   width: auto;
 }
@@ -8,9 +11,13 @@
 }
 
 .navbar {
-  font-family: Roboto,"Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+  font-family: 'Amatic SC', 'Oswald', sans-serif;
   font-size: 50px;
   display: flex;
   justify-content: space-between;
 }
 
+.color-theme {
+  background-color: #e0f7fa;
+  color: #607d8b;
+}

@@ -1,4 +1,4 @@
-<mat-toolbar class="navbar mdl-shadow--2dp">
+<mat-toolbar class="navbar mdl-shadow--2dp, color-theme">
   <span>
     <i class="fa fa-anchor" aria-hidden="true"></i>
   </span>
@@ -10,18 +10,20 @@
   </span>
 </mat-toolbar>
 
-<h2>
+<h2 class="color-theme">
   Let's create a todo tracker:
   <span>
     <i class="fa fa-bath" aria-hidden="true"></i>
   </span>
 </h2>
-<body>
+<body class="color-theme">
 <button mat-raised-button color="accent" (click)="addRow()">Add Item!</button>
 </body>
-<table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+<table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp, color-theme">
+<!--  <table class="mdl-data-table mdl-js-data-table mdl-data-table&#45;&#45;selectable mdl-shadow&#45;&#45;2dp">-->
   <thead>
   <tr>
+    <th><mat-checkbox></mat-checkbox></th>
     <th class="mdl-data-table__cell--non-numeric">Todo</th>
     <th class="mdl-data-table__cell--non-numeric">Priority</th>
     <th class="mdl-data-table__cell--non-numeric">Place</th>
@@ -30,9 +32,13 @@
   </thead>
   <tbody *ngFor="let displayedColumn of displayedColumns; let i = index">
   <tr>
+    <td>
+      <mat-checkbox></mat-checkbox>
+    </td>
     <td class="mdl-data-table__cell--non-numeric">
       <mat-form-field class="auto-size">
-        <input matInput maxlength="50" placeholder="Action Item">
+        <input matInput [(ngModel)]="displayedColumn.todo" placeholder="todo"/>
+<!--        <input matInput maxlength="50" placeholder="Action Item">-->
       </mat-form-field>
     </td>
     <td>

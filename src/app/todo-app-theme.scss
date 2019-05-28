@@ -9,7 +9,7 @@
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
 
-$todo-app-primary: mat-palette($mat-cyan, 50);
+$todo-app-primary: mat-palette($mat-blue-grey, 500);
 $todo-app-accent:  mat-palette($mat-yellow, 50);
 
 // The warn palette is optional (defaults to red).
@@ -18,6 +18,9 @@ $todo-app-warn:    mat-palette($mat-amber, 900);
 //A foreground palette: colors for text and icons. mat-palette($mat-blue-grey, 500);
 //A background palette: colors used for element backgrounds. mat-palette($mat-cyan, 50);
 //TODO: foreground and background?
+//$mat-light-theme-background: $mat-blue-grey;
+//$mat-light-theme-foreground: $mat-cyan;
+
 
 // Create the theme object (a Sass map containing all of the palettes).
 $todo-app-theme: mat-light-theme($todo-app-primary, $todo-app-accent, $todo-app-warn);

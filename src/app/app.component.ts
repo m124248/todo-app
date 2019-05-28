@@ -56,5 +56,5 @@ export class AppComponent {
 //     this.fieldArray.splice(index, 1);
 //   }
 // }
-// 'Todo', 'Priority', 'Place' , 'Delete Row'
+//
 
