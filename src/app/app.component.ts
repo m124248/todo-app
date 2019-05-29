@@ -20,7 +20,7 @@ export interface Place {
 export class AppComponent {
   title = 'List Keeper';
 
-  public displayedColumns = [];
+  public displayedColumns = ['First Row'];
   public newAttribute: any = {};
 
   priorities: Priority[] = [

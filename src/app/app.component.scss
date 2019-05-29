@@ -11,14 +11,40 @@
 }
 
 .navbar {
-  font-family: 'Homemade Apple', cursive;
-  font-size: 50px;
+  font-family: 'Cinzel Decorative', cursive;
+  font-size: 60px;
   display: flex;
   justify-content: space-between;
 }
 
-.color-theme {
-  background-color: #e0f7fa;
-  color: #607d8b;
-  font-size: 30px;
+.size {
+  font-size: 15px;
 }
+mat-card {
+  font-size: 30px;
+  text-align: center;
+}
+
+mat-table {
+  justify-content: center
+}
+
+mat-toolbar {
+  background-image: url("https://blog.oxforddictionaries.com/wp-content/uploads/Nautical-terms1-1200x330.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-attachment: fixed;
+  height: 330px;
+  padding-left: 13%;
+  padding-right: 13%;
+}
+
+.bottom-guy{
+  background-image: url("https://static8.depositphotos.com/1533202/1002/i/950/depositphotos_10027578-stock-photo-grunge-wooden-ship-deck-planks.jpg");
+  background-size: 40%;
+  background-repeat: repeat;
+  background-position: center bottom;
+  background-attachment: fixed;
+}
+

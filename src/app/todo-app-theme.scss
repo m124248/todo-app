@@ -10,10 +10,10 @@
 // hue. Available color palettes: https://material.io/design/color/
 
 $todo-app-primary: mat-palette($mat-blue-grey, 500);
-$todo-app-accent:  mat-palette($mat-yellow, 50);
+$todo-app-accent:  mat-palette($mat-blue-grey, 500);
 
 // The warn palette is optional (defaults to red).
-$todo-app-warn:    mat-palette($mat-amber, 900);
+$todo-app-warn:    mat-palette($mat-red, 900);
 
 //A foreground palette: colors for text and icons. mat-palette($mat-blue-grey, 500);
 //A background palette: colors used for element backgrounds. mat-palette($mat-cyan, 50);
