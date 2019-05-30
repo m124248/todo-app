@@ -11,63 +11,73 @@
 
 </mat-toolbar>
 <mat-card>
-  <mat-card-title>
-    Create a Task List!
-  </mat-card-title>
-  <mat-card-content>
-    <button mat-raised-button color="accent" (click)="addRow()">Add Task!</button>
-  </mat-card-content>
-<table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp, size" align="center">
-  <thead>
-  <tr>
-    <th><mat-checkbox></mat-checkbox></th>
-    <th class="mdl-data-table__cell--non-numeric">Todo</th>
-    <th class="mdl-data-table__cell--non-numeric">Priority</th>
-    <th class="mdl-data-table__cell--non-numeric">Place</th>
-    <th class="mdl-data-table__cell--non-numeric">Delete Row</th>
-  </tr>
-  </thead>
-  <tbody *ngFor="let displayedColumn of displayedColumns; let i = index">
-  <tr>
-    <td>
-      <mat-checkbox></mat-checkbox>
-    </td>
-    <td class="mdl-data-table__cell--non-numeric">
-      <mat-form-field class="auto-size">
-        <input matInput [(ngModel)]="displayedColumn.todo" placeholder="todo"/>
-      </mat-form-field>
-    </td>
-    <td>
-      <mat-form-field class="auto-size">
-        <mat-label>Rate</mat-label>
-        <mat-select>
-          <mat-option *ngFor="let priority of priorities" [value]="priority.value">
-            {{priority.viewValue}}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
-    </td>
-    <td>
-      <mat-form-field class="auto-size">
-        <mat-label>Choose One</mat-label>
-        <mat-select>
-          <mat-option *ngFor="let place of places" [value]="place.value">
-            {{place.viewValue}}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
-    </td>
-    <td>
-      <button mat-icon-button matTooltip="Click to Delete" class="iconbutton" (click)="onDelete(i)"
-              color="warn">
-        <mat-icon aria-label="Delete">delete</mat-icon>
-      </button>
-    </td>
-  </tr>
-  </tbody>
-</table>
+  <mat-card-header>
+    <mat-card-title>
+      <div>
+        Create a Task List!
+      </div>
+      <div>
+        <button mat-raised-button color="accent" (click)="addRow()">ADD LINE</button>
+        <button mat-raised-button color="accent" (click)="deleteTable()">RESET</button>
+      </div>
+    </mat-card-title>
+  </mat-card-header>
 </mat-card>
+<mat-card>
+  <mat-card-content>
+      <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+        <thead>
+        <tr>
+          <th><mat-checkbox></mat-checkbox></th>
+          <th class="mdl-data-table__cell--non-numeric">Todo</th>
+          <th class="mdl-data-table__cell--non-numeric">Priority</th>
+          <th class="mdl-data-table__cell--non-numeric">Place</th>
+          <th class="mdl-data-table__cell--non-numeric">Delete Row</th>
+        </tr>
+        </thead>
+        <tbody *ngFor="let displayedColumn of displayedColumns; let i = index">
+        <tr>
+          <td>
+            <mat-checkbox></mat-checkbox>
+          </td>
+          <td class="mdl-data-table__cell--non-numeric">
+            <mat-form-field class="auto-size">
+              <input matInput [(ngModel)]="displayedColumn.todo" placeholder="todo"/>
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="auto-size">
+              <mat-label>Rate</mat-label>
+              <mat-select>
+                <mat-option *ngFor="let priority of priorities" [value]="priority.value">
+                  {{priority.viewValue}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="auto-size">
+              <mat-label>Choose One</mat-label>
+              <mat-select>
+                <mat-option *ngFor="let place of places" [value]="place.value">
+                  {{place.viewValue}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </td>
+          <td>
+            <button mat-icon-button matTooltip="Click to Delete" class="iconbutton" (click)="onDelete(i)"
+                    color="warn">
+              <mat-icon aria-label="Delete">delete</mat-icon>
+            </button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+  </mat-card-content>
+</mat-card>
+
 <mat-toolbar class="bottom-guy">
-  muh internets
+  bottom of the page
 </mat-toolbar>
 <router-outlet></router-outlet>

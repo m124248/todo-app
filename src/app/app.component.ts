@@ -43,6 +43,10 @@ export class AppComponent {
     this.displayedColumns.push(this.newAttribute);
     this.newAttribute = {};
   }
+
+  deleteTable = () => {
+    this.displayedColumns = ['First Row'];
+  }
 }
 //   private fieldArray: Array<any> = [];
 //   private newAttribute: any = {};

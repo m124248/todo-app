@@ -5,39 +5,48 @@
   width: auto;
 }
 
-.iconbutton {
-  margin: 0 auto;
-  display: block;
-}
-
-.navbar {
-  font-family: 'Cinzel Decorative', cursive;
-  font-size: 60px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.size {
-  font-size: 15px;
-}
-mat-card {
-  font-size: 30px;
-  text-align: center;
-}
-
-mat-table {
-  justify-content: center
-}
-
 mat-toolbar {
   background-image: url("https://blog.oxforddictionaries.com/wp-content/uploads/Nautical-terms1-1200x330.jpg");
   background-size: 100%;
-  background-repeat: no-repeat;
+  background-repeat: repeat-y;
   background-position: center top;
   background-attachment: fixed;
   height: 330px;
   padding-left: 13%;
   padding-right: 13%;
+}
+
+.navbar {
+  font-size: 60px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.iconbutton {
+  margin: 0 auto;
+  display: block;
+}
+
+mat-card {
+  font-size: 30px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  width: auto;
+  //flex-wrap: wrap;
+  justify-content: center;
+}
+
+mat-card-title {
+  justify-content: space-between;
+}
+
+button{
+  font-size: 30px;
+}
+
+mat-table {
+  display: flex;
 }
 
 .bottom-guy{
@@ -46,5 +55,9 @@ mat-toolbar {
   background-repeat: repeat;
   background-position: center bottom;
   background-attachment: fixed;
+  color: palegoldenrod;
+  font-family: "Josefin Slab", sans-serif;
+  font-weight: bold;
+  ;
 }
 
