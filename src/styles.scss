@@ -1,8 +1,13 @@
 @import '~@angular/material/theming';
+@import './app/todo-app-theme';
 
 html, body, head, h2, div, mat-form-field, mat-table, mat-card-title, tr, td, mat-option, mat-select,
 span {
   font-family: 'Josefin Slab', serif;
+}
+
+body {
+  background-color: #8eacbb;
 }
 //
 //.basic-container {
